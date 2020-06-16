@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+  <title>Community-Project</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body>
+  <nav>
+    <div class="nav-wrapper teal lighten-2">
+      <a href="#!" class="brand-logo">&nbsp;&nbsp;&nbsp;&nbsp;Community Project</a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="demandeService.html">Demander un service</a></li>
+        <li><a href="listeService.html">Proposer de l'aide</a></li>
+        <li><a href="listeCommunaute.html">Communautés</a></li>
+        <li><a href="inscription.html">Inscription</a></li>
+        <li><a href="#connexion">Connexion</a></li>
+      </ul>
+      <ul class="side-nav" id="mobile-demo">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="demandeService.html">Demander un service</a></li>
+        <li><a href="listeService.html">Proposer de l'aide</a></li>
+        <li><a href="listeCommunaute.html">Communautés</a></li>
+        <li><a href="inscription.html">Inscription</a></li>
+        <li><a href="#connexion">Connexion</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div id="connexion" class="modal">
+    <div class="modal-content">
+      <h4>Connectez-vous</h4>
+       <div class="row">
+               <div class="input-field col s6">
+                    <i class="material-icons prefix">email</i>
+                    <input id="emailLogin" type="email" class="validate">
+                    <label for="email" data-error="adresse mail invalide" data-success="">Email</label>
+               </div>
+               <div class="input-field col s6">
+                    <i class="material-icons prefix">lock</i>
+			              <input id="passwordLogin" type="password" class="validate">
+                    <label for="password">Mot de passe</label>
+               </div>
+            </div>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Annuler</a>
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Valider</a>
+    </div>
+  </div>
+  <div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <div class="row center">
+          <h2 class="header center white-text text-accent-3" style="text-shadow: #000000 1px 1px, #000000 -1px 1px, #000000 -1px -1px, #000000 1px -1px;">Inscrivez-vous</h2>
+        </div>
+      </div>
+    </div>
+    <div class="parallax"><img src="backgrounds/background7.jpg" alt="Unsplashed background img 2"></div>
+  </div>
+  <br/>
+  <div class="container">
+    <div class="section">
+       <div class="row">
+           <label id="error_empty" class="red-text">Tous les champs doivent être remplis !</label>
+         <form class="col s12">
+            <div class="row">
+               <div class="input-field col s6">
+                    <i class="material-icons prefix">person_pin</i>
+                    <input id="prenom" type="text" class="validate">
+                    <label for="prenom">Prénom</label>
+               </div>
+               <div class="input-field col s6">
+                    <input id="nom" type="text" class="validate">
+                    <label for="nom">Nom</label>
+               </div>
+            </div>
+             
+             <label id="error_mail" class="red-text">Adresse electronique invalide !</label>
+            <div class="row">
+               <div class="input-field col s6">
+                    <i class="material-icons prefix">email</i>
+                    <input id="email" type="email" class="validate">
+                    <label for="email" data-error="adresse mail invalide" data-success="">Email</label>
+               </div>
+               <div class="input-field col s6">
+                    <i class="material-icons prefix">phone</i>
+                    <input id="telephone" type="tel" class="validate">
+                    <label for="telephone" data-error="numéro de téléphone invalide" data-success="">Numéro de téléphone</label>
+               </div>
+            </div>
+             
+            <label id="error_password" class="red-text">Mots de passe non identiques !</label>
+            <div class="row">
+               <div id="password-div" class="input-field col s6">
+                    <i class="material-icons prefix">lock</i>
+                    <input id="password" type="password" class="validate">
+                    <label for="password">Mot de passe</label>
+               </div>
+               <div class="input-field col s6">
+                    <input id="validPassword" type="password" class="validate">
+                    <label for="validPassword">Confirmer mot de passe</label>
+               </div>
+            </div>	
+            <div class="row">
+                <div class="input-field col s6">
+                <i class="material-icons prefix">room</i>
+                <input id="adresse" type="text" class="validate">
+                <label for="icon_prefix">Adresse</label>
+                </div>
+                <div class="input-field col s3">
+                <input placeholder="Ex: 69100'" id="CP" type="text" class="validate">
+                <label for="CP">Code postal</label>
+                </div>
+                <div class="input-field col s3">
+                <input placeholder="Ex: Villeurbanne'" id="ville" type="text" class="validate">
+                <label for="ville">Ville</label>
+                </div>
+            </div>		
+            <div class="row">
+               <div class="input-field col s12">                 
+                 <div id="map"></div>
+                    <script>
+                        function initMap() {
+                            var location = {lat: 45.756284, lng: 4.850491};
+                            var map = new google.maps.Map(document.getElementById('map'), {
+                            zoom: 12,
+                            center: location
+                            });
+                            var marker = new google.maps.Marker({
+                            position: location,
+                            map: map
+                            });
+                        }
+                    </script>
+                    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAt5hKjmRs37vSRzlEqbCtohxdaDDs9FQ4&callback=initMap"></script>			
+		    </div>
+            </div> 
+         </form>       
+      </div>
+      <div class="row center">
+          <a id="demande_service_button" class="btn-large waves-effect waves-light teal lighten-1">Valider</a>
+          <a href="index.html" id="annulation_button" class="btn-large waves-effect waves-light teal lighten-1">Annuler</a>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <div class="row center">
+          <h4 class=" col s12 light white-text text-lighten-2" style="text-shadow: #000000 1px 1px, #000000 -1px 1px, #000000 -1px -1px, #000000 1px -1px;">Bricolage // Jardinage // Education // Informatique // Réparations // Et bien plus encore...</h4>
+        </div>
+      </div>
+    </div>
+    <div class="parallax"><img src="backgrounds/background5.jpg" alt="Unsplashed background img 2"></div>
+  </div>
+
+  <footer class="page-footer teal">
+    <div class="container">
+      <div class="row center">
+        <div class="col s12">
+          <h5 class="white-text">Qui sommes nous?</h5>
+          <p class="grey-text text-lighten-4">Une équipe formée par des élèves ingénieurs et le Grand Lyon. Notre but commun: permettre l'amélioration de la vie communautaire dans Lyon, et veiller au bien-être de ses citoyens. Nous encourageons le partage, l'entraide, et la bienveillance.</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      Réalisé par des élèves de l' <a class="brown-text text-lighten-3" href="https://www.insa-lyon.fr/">INSA Lyon</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+  <script>$(document).ready(function() {
+    $('select').material_select();
+  }); 
+  </script>
+  <script>
+    $('.datepicker').pickadate({
+    selectMonths: true, // Creates a dropdown to control month
+    selectYears: 15 // Creates a dropdown of 15 years to control year
+  });
+  </script>
+  <script>
+  $(document).ready(function(){
+      $('#error_empty').hide();
+      $('#error_mail').hide();
+      $('#error_password').hide();
+    // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+    $('.modal').modal();
+  });
+  </script>
+  
+  <script>
+    $(document).ready(function(){
+	$('#demande_service_button').click(function(){
+		var prenomC = document.getElementById('prenom').value;
+		var nomC = document.getElementById('nom').value;
+		var emailC = document.getElementById('email').value;
+		var telephoneC = document.getElementById('telephone').value;
+		var passwordC = document.getElementById('password').value;
+		var validPasswordC = document.getElementById('validPassword').value;
+		var adresseC = document.getElementById('adresse').value;
+		var CPC = document.getElementById('CP').value;
+		var villeC = document.getElementById('ville').value;
+		//$('#error_password').show();
+           /*if( $('#prenom').val() == "" || $('#nom').val() == "" ||
+                $('#email').val() == "" || $('#telephone').val() == "" ||
+                $('#password').val() == "" || $('#adresse').val() == "" ||
+                $('#CP').val() == ""|| ('#ville').val() == "")
+                   $('#error_empty').show();
+             //else if($('#email').val().index("@")== -1)
+                //$('#error_mail').show();
+            else if($('#validPassword').val() != $('#password').val())
+                $('#error_password').show();*/
+		if(!prenomC || !nomC || !emailC || !telephoneC || !passwordC || !validPasswordC || !adresseC || !CPC || !villeC){
+				$('#error_empty').show();
+		}
+		if(passwordC!=validPasswordC){
+				$('#error_password').show();
+		}
+            else{
+                $.ajax({
+			url : './MainServlet',
+			type : 'POST',
+			dataType : 'json',
+			data: { action: "subscribe_utilisateur",
+                                prenom_utilisateur: $('#prenom').val(),
+                                nom_utilisateur: $('#nom').val(),
+                                mail: $('#email').val(),
+                                tel: $('#telephone').val(),
+                                mot_de_passe: $('#password').val(),
+                                adresse: $('#adresse').val(),
+                                code_postale: $('#CP').val(),
+                                ville: $('#ville').val()
+                              },
+			success : function(data){
+                            if(data.response == "409")
+                                $('#error_mail').show();
+                            else if(data.response == "200")
+                                document.location.href="acceuilConnecte.html";
+                        },
+                        error: function (jqXHR, textStatus, errorThrown) {
+							console.log(prenomC);
+                            // alert(jqXHR + " | " +textStatus + " | " +errorThrown);
+                        }
+		});
+            }
+	});
+    });
+  </script>
+  
+  <style>
+	#map {
+	width: 100%;
+	height: 300px;
+	background-color: grey;
+	}
+</style>
+  </body>
+</html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+  <title>Communauté</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body>
+  <nav>
+    <div class="nav-wrapper teal lighten-2">
+      <a href="#!" class="brand-logo">&nbsp;&nbsp;&nbsp;&nbsp;Community Project</a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="acceuilConnecte.html">Accueil</a></li>
+        <li><a href="demandeService.html">Demander un service</a></li>
+        <li><a href="listeService.html">Proposer de l'aide</a></li>
+        <li><a href="listeCommunaute.html">Communautés</a></li>
+        <li><a href="profil.html">Profil</a></li>
+        <li><a onclick="disconnect()">Déconnexion</a></li>
+      </ul>
+      <ul class="side-nav" id="mobile-demo">
+        <li><a href="acceuilConnecte.html">Accueil</a></li>
+        <li><a href="demandeService.html">Demander un service</a></li>
+        <li><a href="listeService.html">Proposer de l'aide</a></li>
+        <li><a href="listeCommunaute.html">Communautés</a></li>
+        <li><a href="profil.html">Profil</a></li>
+        <li><a onclick="disconnect()">Déconnexion</a></li>
+    </div>
+  </nav>
+  <div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+      <div class="container">
+	  
+        <div class="row center">
+          <h2 class="header center white-text text-lighten-2" style="text-shadow: #000000 1px 1px, #000000 -1px 1px, #000000 -1px -1px, #000000 1px -1px;">Bienvenue dans votre communauté</h2>
+        </div>
+		
+        <div class="row center">
+          <a href="adminCommunaute.html" id="admin-communaute" class="btn-large waves-effect waves-light teal lighten-1">Modifier la communauté</a>
+        </div>
+      </div>
+    </div>
+    <div class="parallax"><img src="backgrounds/background10.jpg" alt="Unsplashed background img 2"></div>
+  </div>
+  <br/>
+	<div class="row">
+		<div class="col s12">
+			<div class="row center">
+				<h5>Communauté :<font color="teal"> INSA de Lyon</font></h5>
+				<h6>22 membres</h6>
+			</div>
+		</div>
+	
+	<div class="row center">
+		<div class="col s2"></div>
+		<div class="input-field col s8"> Description: <br/><br/><br/><br/>
+		<p> <label id="description_label"><br/>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque id nunc nec volutpat. Etiam pellentesque tristique arcu, non consequat magna fermentum ac. Cras ut ultricies eros. Maecenas eros justo, ullamcorper a sapien id, viverra ultrices eros. Morbi sem neque, posuere et pretium eget, bibendum sollicitudin lacus. Aliquam eleifend sollicitudin diam, eu mattis nisl maximus sed. Nulla imperdiet semper molestie. Morbi massa odio, condimentum sed ipsum ac, gravida ultrices erat. Nulla</label></p>
+		</div>
+		<div class="col s2"></div>
+	</div>
+	<br/><br/><br/><br/><br/>
+	<div class="row center">
+		<div class="col s4"></div>
+		<div class="col s4">
+			<div class="row center">	
+				<div class="input-field col s12">
+					<select>
+					  <option value="1">Bricolage</option>
+					  <option value="2">Jardinage</option>
+					  <option value="3">Soutien scolaire</option>
+					  <option value="4">Assistance</option>
+					</select>
+					<label>Catégorie de service</label>
+				</div>	
+			</div>
+	    </div>
+		<div class="col s4"></div>
+	</div>
+      
+	<div class="row">
+      <div class="col s6">
+			<h6> Liste des services auquel je peux postuler </h6>
+			<ul class="collection">
+				<li class="collection-item avatar">
+					
+					<a href="service.html" class="collection-item black-text">Titre: Nettoyage de mon jardin<br/>
+					<img src="categories/jardinage.jpg" alt="" class="circle">
+					Catégorie: Jardinage<br/>
+					<p>Demandeur : Valérie
+					</p>
+					<i class="tiny material-icons">today</i>Date: 10/05/2017  | 
+					<i class="tiny material-icons">stars</i> Jetons offerts: 2  | 
+					<i class="tiny material-icons">perm_identity</i> Nombre de personnes: 1</a>
+					 
+				</li>
+				
+				<li class="collection-item avatar">
+					
+					<a href="service.html" class="collection-item black-text">Titre: Fabrication et pose de coffrages en bois<br/>
+					<img src="categories/bricolage.jpg" alt="" class="circle">Catégorie: Bricolage<br/>
+					<p>Demandeur : Arthur
+					</p>
+					<i class="tiny material-icons">today</i>Date: 13/05/2017  | 
+					<i class="tiny material-icons">stars</i> Jetons offerts: 3  | 
+					<i class="tiny material-icons">perm_identity</i> Nombre de personnes: 2</a>
+				</li>
+			</ul>
+		
+
+	  </div>
+     
+	<div class="col s6">
+	
+	
+		<div class="row">
+		
+		<h6> Liste de mes services demandés</h6>
+		<ul class="collection">
+				<li class="collection-item avatar">
+					
+					<a href="service.html" class="collection-item black-text">Titre: Cours de portugais (brésilien)<br/>
+					<img src="categories/soutien.jpg" alt="" class="circle">
+					Catégorie: Soutien scolaire<br/>
+					<p>Demandeur : Justin
+					</p>
+					<i class="tiny material-icons">today</i>Date: 20/05/2017  | 
+					<i class="tiny material-icons">stars</i> Jetons offerts: 2  | 
+					<i class="tiny material-icons">perm_identity</i> Nombre de personnes: 1</a>
+					 
+				</li>
+				
+				<li class="collection-item avatar">
+					
+					<a href="service.html" class="collection-item black-text">Titre: Cours de dance 'Salsa'<br/>
+					<img src="categories/divers.jpg" alt="" class="circle">Catégorie: Divers<br/>
+					<p>Demandeur : Justin
+					</p>
+					<i class="tiny material-icons">today</i>Date: 01/06/2017  | 
+					<i class="tiny material-icons">stars</i> Jetons offerts: 3  | 
+					<i class="tiny material-icons">perm_identity</i> Nombre de personnes: 1</a>
+				</li>
+			</ul>
+	  
+		</div>
+	</div>	
+	<div class="row center">
+		<a href="adminCommunaute.html" class="waves-effect waves-light btn">Modifier la communauté</a>				
+	</div>
+</div>
+</div>
+<div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <div class="row center">
+          <h4 class=" col s12 light white-text text-lighten-2" style="text-shadow: #000000 1px 1px, #000000 -1px 1px, #000000 -1px -1px, #000000 1px -1px;">Bricolage // Jardinage // Education // Informatique // Réparations // Et bien plus encore...</h4>
+        </div>
+      </div>
+    </div>
+    <div class="parallax"><img src="backgrounds/background7.jpg" alt="Unsplashed background img 2"></div>
+  </div>
+ <footer class="page-footer teal">
+    <div class="container">
+      <div class="row center">
+        <div class="col s12">
+          <h5 class="white-text">Qui sommes nous?</h5>
+          <p class="grey-text text-lighten-4">Une équipe formée par des élèves ingénieurs et le Grand Lyon. Notre but commun: permettre l'amélioration de la vie communautaire dans Lyon, et veiller au bien-être de ses citoyens. Nous encourageons le partage, l'entraide, et la bienveillance.</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      Réalisé par des élèves de l'<a class="brown-text text-lighten-3" href="https://www.insa-lyon.fr/">INSA Lyon</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+  <script>
+    $(document).ready(function() {
+        $('#error_communaute').hide();
+        $('select').material_select();
+    }); 
+	</script>
+
+  </body>
+</html>

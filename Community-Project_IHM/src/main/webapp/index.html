@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+  <title>Community-Project</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body>
+  <nav>
+    <div class="nav-wrapper teal lighten-2">
+      <a href="#!" class="brand-logo">&nbsp;&nbsp;&nbsp;&nbsp;Community Project</a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+      <font face="Verdana"><ul class="right hide-on-med-and-down">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="demandeService.html">Demander un service</a></li>
+        <li><a href="listeService.html">Proposer de l'aide</a></li>
+        <li><a href="listeCommunaute.html">Communautés</a></li>
+        <li><a href="inscription.html">Inscription</a></li>
+        <li><a href="#connexion">Connexion</a></li>
+      </ul></font>
+      <ul class="side-nav" id="mobile-demo">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="demandeService.html">Demander un service</a></li>
+        <li><a href="listeService.html">Proposer de l'aide</a></li>
+        <li><a href="listeCommunaute.html">Communautés</a></li>
+        <li><a href="inscription.html">Inscription</a></li>
+        <li><a href="#connexion">Connexion</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div id="connexion" class="modal">
+    <div class="modal-content">
+      <h4>Connectez-vous</h4>
+      <label id="invalid_inputs_label" for="invalid connection" class="red-text">Email ou mot de passe invalide!</label>
+       <div class="row">
+               <div class="input-field col s6">
+                    <i class="material-icons prefix">email</i>
+                    <input id="email" type="email" class="validate">
+                    <label for="email">Email</label>
+               </div>
+               <div class="input-field col s6">
+                    <i class="material-icons prefix">lock</i>
+                    <input id="password" type="password" class="validate">
+                    <label for="password">Mot de passe</label>
+               </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+      <a class="modal-action modal-close waves-effect waves-green btn-flat">Annuler</a>
+      <a id="connect_button" class="btn-flat">Valider</a>
+    </div>
+  </div>
+  <div id="index-banner" class="parallax-container">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <br><br>
+        <h2 class="header center teal-text text-lighten-2" style="text-shadow: #000000 1px 1px, #000000 -1px 1px, #000000 -1px -1px, #000000 1px -1px;">Bienvenue chez Community Project</h2>
+        <h4 class="header center col s12 bold" style="text-shadow: #000000 1px 1px, #000000 -1px 1px, #000000 -1px -1px, #000000 1px -1px;">Echange de services entre particuliers</h4>
+        <div class="row center">
+          <p class="light" style="text-shadow: #000000 1px 1px, #000000 -1px 1px, #000000 -1px -1px, #000000 1px -1px;">Vous trouverez ici toute l'aide dont vous avez besoin pour réaliser vos projets du quotidien.<br/>Participez à l'enrichissement de votre communauté en aidant ceux qui sont proches de vous.</p>
+        </div>
+        <div class="row center">
+          <a href="demandeService.html" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Demandez un service</a>
+        </div>
+        <div class="row center">
+          <a href="creationCommunaute.html" id="creer-communaute" class="btn-large waves-effect waves-light teal lighten-1">Créer une communauté</a>
+        </div>
+        <br><br>
+
+      </div>
+    </div>
+    <div class="parallax"><img src="backgrounds/background1.jpg" alt="Unsplashed background img 1"></div>
+  </div>
+
+
+  <div class="container">
+    <div class="section">
+
+      <!--   Icon Section   -->
+      <div class="row">
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center brown-text"><i class="material-icons">flash_on</i></h2>
+            <h5 class="center">Partagez vos compétences</h5>
+            <p class="light">Utilisez vos compétences pour venir en aide aux membres de votre communauté et profitez des leurs pour mener à bien vos projets personnels. </p>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center brown-text"><i class="material-icons">group</i></h2>
+            <h5 class="center">Participez à la vie de votre communauté</h5>
+            <p class="light">Soyez désormais en mesure d'aider et d'être aidé au sein de votre communauté. Faites de votre communauté une entité toujours plus soudée.</p>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center brown-text"><i class="material-icons">star</i></h2>
+            <h5 class="center">Gagnez des récompenses</h5>
+            <p class="light">Votre implication dans la vie de votre communauté et les services que vous rendez vous feront gagner de superbes récompenses! N'hésitez plus à rendre service à ceux qui vivent proches de vous.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <div class="row center">
+          <h4 class=" col s12 light white-text text-lighten-2" style="text-shadow: #000000 1px 1px, #000000 -1px 1px, #000000 -1px -1px, #000000 1px -1px;">Bricolage // Jardinage // Education // Informatique // Réparations // Et bien plus encore...</h4>
+        </div>
+      </div>
+    </div>
+    <div class="parallax"><img src="backgrounds/background6.jpg" alt="Unsplashed background img 2"></div>
+  </div>
+
+  <footer class="page-footer teal">
+    <div class="container">
+      <div class="row center">
+        <div class="col s12">
+          <h5 class="white-text">Qui sommes nous?</h5>
+          <p class="grey-text text-lighten-4">Une équipe formée par des élèves ingénieurs et le Grand Lyon. Notre but commun: permettre l'amélioration de la vie communautaire dans Lyon, et veiller au bien-être de ses citoyens. Nous encourageons le partage, l'entraide, et la bienveillance.</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      Réalisé par des élèves de l'<a class="brown-text text-lighten-3" href="https://www.insa-lyon.fr/">INSA Lyon</a>
+      </div>
+    </div>
+  </footer>
+  <style>
+    .parallax-container {
+        height: 500px;
+      }
+    </style>
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+  <script>
+  $(document).ready(function(){
+        $('#invalid_inputs_label').hide();
+        // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+        $('.modal').modal();
+  });
+  </script>
+  
+  <script>
+    $(document).ready(function(){
+	$('#connect_button').click(function(){
+		$.ajax({
+			url : './MainServlet',
+			type : 'POST',
+			dataType : 'json',
+			data: { action: "connect",
+                                nom_utilisateur : $('#email').val(),
+                                mot_de_passe : $('#password').val()
+                              },
+			success : function(data){
+                            if(data.response == "200")
+                                document.location.href="acceuilConnecte.html";
+                            else
+                                $('#invalid_inputs_label').show();
+                        },
+                        error: function (jqXHR, textStatus, errorThrown) {
+                            // alert(jqXHR + " | " +textStatus + " | " +errorThrown);
+                        }
+		});
+	});
+    });
+  </script>
+
+  </body>
+</html>

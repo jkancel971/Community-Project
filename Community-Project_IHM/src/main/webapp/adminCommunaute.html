@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+  <title>Administration d'une communauté</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body>
+  <nav>
+    <div class="nav-wrapper teal lighten-2">
+      <a href="#!" class="brand-logo">&nbsp;&nbsp;&nbsp;&nbsp;Community Project</a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="acceuilConnecte.html">Accueil</a></li>
+        <li><a href="demandeService.html">Demander un service</a></li>
+        <li><a href="listeService.html">Proposer de l'aide</a></li>
+        <li><a href="listeCommunaute.html">Communautés</a></li>
+        <li><a href="profil.html">Profil</a></li>
+        <li><a onclick="disconnect()">Déconnexion</a></li>
+      </ul>
+      <ul class="side-nav" id="mobile-demo">
+        <li><a href="acceuilConnecte.html">Accueil</a></li>
+        <li><a href="demandeService.html">Demander un service</a></li>
+        <li><a href="listeService.html">Proposer de l'aide</a></li>
+        <li><a href="listeCommunaute.html">Communautés</a></li>
+        <li><a href="profil.html">Profil</a></li>
+        <li><a onclick="disconnect()">Déconnexion</a></li>
+    </div>
+  </nav>
+  <div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+      <div class="container">
+	  
+        <div class="row center">
+          <h2 class="header center white-text text-lighten-2" style="text-shadow: #000000 1px 1px, #000000 -1px 1px, #000000 -1px -1px, #000000 1px -1px;">Modifiez votre communauté</h2>
+        </div>
+      </div>
+    </div>
+    <div class="parallax"><img src="backgrounds/background10.jpg" alt="Unsplashed background img 2"></div>
+  </div>
+  
+  <br/>
+   <div class="row">
+		<div class="col s12">
+			<div class="row center">
+				<h5>Communauté :<font color="teal"> INSA de Lyon</font></h5>
+				<h6>22 membres</h6>
+			</div>
+		</div>
+		<div class="col s12">
+			<form class="col s12">
+				<div class="row">
+						<div class="col s4"></div>
+						<div class="input-field col s4">
+								<i class="material-icons prefix">store</i>
+								<input id="nom" type="text" class="validate">
+								<label for="nom">Nouveau nom de communauté</label>
+						</div>
+						<div class="col s4"></div>
+				</div>
+			</form>
+		</div>
+		
+	    <div class="col s12">
+			<br><br>
+		</div>
+	  
+		<div class="col s4">
+		
+			<div class="row">	<br/>
+				<div class="input-field col s12">
+					<select>
+					  <option value="1">Bricolage</option>
+					  <option value="2">Jardinage</option>
+					  <option value="3">Soutien scolaire</option>
+					  <option value="4">Assistance</option>
+					</select>
+					<label>Catégorie</label>
+				</div>	
+			</div>
+			
+			<div class="row">
+            
+			  <ul class="collection">
+				<li class="collection-item"><div>Template 1<a href="#!" class="secondary-content"><i class="material-icons">close</i></a><a href="#!" class="secondary-content"><i class="material-icons">settings</i></a></div></li>
+				<li class="collection-item"><div>Template 2<a href="#!" class="secondary-content"><i class="material-icons">close</i></a><a href="#!" class="secondary-content"><i class="material-icons">settings</i></a></div></li>
+				<li class="collection-item"><div>Template 3<a href="#!" class="secondary-content"><i class="material-icons">close</i></a><a href="#!" class="secondary-content"><i class="material-icons">settings</i></a></div></li>
+				<li class="collection-item"><div>Template 4<a href="#!" class="secondary-content"><i class="material-icons">close</i></a><a href="#!" class="secondary-content"><i class="material-icons">settings</i></a></div></li>
+			  </ul>
+            
+            </div>
+			
+		</div>
+				
+		<div class="col s4">
+		
+			<div class="row center">
+				<h6>Ajouter un nouveau template:</h6>
+					<div class="input-field col s12">
+					  <input placeholder="Titre du nouveau template" id="titre_template" type="text" class="validate">
+					</div>
+			</div>
+			
+			<div class="row center">	
+				<div class="input-field col s12">
+					<select>
+					  <option value="1">Bricolage</option>
+					  <option value="2">Jardinage</option>
+					  <option value="3">Soutien scolaire</option>
+					  <option value="4">Assistance</option>
+					</select>
+					<label>Catégorie</label>
+				</div>	
+			</div>
+			<div class="row center">
+				<div class="input-field">
+						<p>
+							<input type="checkbox" id="opt1" />
+							<label for="opt1">Option 1</label>
+						</p>
+						<p>
+							<input type="checkbox" id="opt2" />
+							<label for="opt2">Option 2</label>
+						</p>
+						<p>
+							<input type="checkbox" id="opt3" />
+							<label for="opt3">Option 3</label>
+						</p>
+					
+				</div>
+			</div>
+			
+			<div class="row center">
+          <a href="#!" id="modifier_button" class="btn-large waves-effect waves-light teal lighten-1">Modifier</a>
+          <a href="communaute.html" id="annulation_button" class="btn-large waves-effect waves-light teal lighten-1">Annuler</a>
+      </div>
+	  
+			</div>
+		
+		
+		<div class="col s4">
+			<div class="row center">
+				<h6> Recherche par membre:</h6>
+				<form>
+					<div class="input-field">
+						<input id="rechercheMembre" type="search" required> 
+						<label class="label-icon" for="rechercheMembre"><i class="material-icons">search</i></label>
+						<i class="material-icons">close</i>
+					</div>
+				</form>
+			</div>
+			
+			<div class="row center">
+			<div class="col s3"></div>
+			<div class="col s6">
+				<label id ="resultat"></label>
+				<div class="collection">
+				  <a href="#rejoindre" class="collection-item">Arthur</a>
+				  <a href="#rejoindre" class="collection-item">Justin</a>
+				  <a href="#rejoindre" class="collection-item">Valérie</a>
+				  <a href="#rejoindre" class="collection-item">Louis</a>
+				  <a href="#rejoindre" class="collection-item">Mathilde</a>
+				</div>
+			</div>
+			<div class="col s3"></div>
+    </div>
+			
+		</div>
+	  
+	  
+    </div>
+  
+  <div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <div class="row center">
+          <h4 class=" col s12 light white-text text-lighten-2" style="text-shadow: #000000 1px 1px, #000000 -1px 1px, #000000 -1px -1px, #000000 1px -1px;">Bricolage // Jardinage // Education // Informatique // Réparations // Et bien plus encore...</h4>
+        </div>
+      </div>
+    </div>
+    <div class="parallax"><img src="backgrounds/background11.jpg" alt="Unsplashed background img 2"></div>
+  </div>
+ 
+  
+ <footer class="page-footer teal">
+    <div class="container">
+      <div class="row center">
+        <div class="col s12">
+          <h5 class="white-text">Qui sommes nous?</h5>
+          <p class="grey-text text-lighten-4">Une équipe formée par des élèves ingénieurs et le Grand Lyon. Notre but commun: permettre l'amélioration de la vie communautaire dans Lyon, et veiller au bien-être de ses citoyens. Nous encourageons le partage, l'entraide, et la bienveillance.</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      Réalisé par des élèves de l'<a class="brown-text text-lighten-3" href="https://www.insa-lyon.fr/">INSA Lyon</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+	<script>
+    $(document).ready(function() {
+        $('#error_communaute').hide();
+        $('select').material_select();
+    }); 
+	</script>
+
+  </body>
+</html>

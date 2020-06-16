@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+  <title>Community-Project</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body>
+  <nav>
+    <div class="nav-wrapper teal lighten-2">
+      <a href="#!" class="brand-logo">&nbsp;&nbsp;&nbsp;&nbsp;Community Project</a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="acceuilConnecte.html">Accueil</a></li>
+        <li><a href="demandeService.html">Demander un service</a></li>
+        <li><a href="listeService.html">Proposer de l'aide</a></li>
+        <li><a href="listeCommunaute.html">Communautés</a></li>
+        <li><a href="profil.html">Profil</a></li>
+        <li><a onclick="disconnect()">Déconnexion</a></li>
+      </ul>
+      <ul class="side-nav" id="mobile-demo">
+        <li><a href="acceuilConnecte.html">Accueil</a></li>
+        <li><a href="demandeService.html">Demander un service</a></li>
+        <li><a href="listeService.html">Proposer de l'aide</a></li>
+        <li><a href="listeCommunaute.html">Communautés</a></li>
+        <li><a href="profil.html">Profil</a></li>
+        <li><a onclick="disconnect()">Déconnexion</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <div class="row center">
+          <h2 class="header center white-text text-accent-3" style="text-shadow: #000000 1px 1px, #000000 -1px 1px, #000000 -1px -1px, #000000 1px -1px;">Indiquez à votre communauté le service que vous recherchez</h2>
+        </div>
+      </div>
+    </div>
+    <div class="parallax"><img src="backgrounds/background7.jpg" alt="Unsplashed background img 2"></div>
+  </div>
+  <br/>
+  <div class="container">
+    <div class="section">
+       <div class="row">
+         <form class="col s12">
+             <label id="error_communaute" class="red-text">Vous n'etes inscrit à aucune communauté!</label>
+            <div class="row">
+               <div id="communaute_div" class="input-field col s4">      
+                   <select id="communaute_nom">
+                    </select>
+                <label>Communauté</label> 
+               </div>
+                <div id="categorie_div" class="input-field col s4">
+                    <select  id="categorie_nom" disabled="">
+                    </select>
+                <label>Catégorie de service</label>
+               </div>
+                <div id="service_div" class="input-field col s4">      
+                    <select id="template_nom" disabled="">
+                    </select>
+                <label>Services</label>         
+               </div>
+            </div>
+            <div class="row">
+               <div class="input-field col s12">
+                  <input placeholder="Ex: Montage d'une table de cuisine'" id="nom_service" type="text" class="validate">
+                  <label for="nom_service">Titre du service</label>
+               </div>
+            </div>
+            <div class="row">
+               <div class="input-field col s12">
+                    <textarea id="description" class="materialize-textarea" data-length="500"></textarea>
+                    <label for="description">Description du service</label>
+               </div>
+            </div>	
+            <div class="row">
+              <div class="file-field input-field col s3">
+                <div class="btn"><i class="material-icons left">perm_media</i></a>
+                  <span>Photo</span>
+                  <input type="file">
+                </div>
+                <div class="file-path-wrapper">
+                  <input class="file-path validate" type="text" placeholder="Ajoutez une photo">
+                </div>
+              </div>
+              <div class="file-field input-field col s3">
+                <div class="btn"><i class="material-icons left">perm_media</i></a>
+                  <span>Photo</span>
+                  <input type="file">
+                </div>
+                <div class="file-path-wrapper">
+                  <input class="file-path validate" type="text" placeholder="Ajoutez une photo">
+                </div>
+              </div>
+              <div class="file-field input-field col s3">
+                <div class="btn"><i class="material-icons left">perm_media</i></a>
+                  <span>Photo</span>
+                  <input type="file">
+                </div>
+                <div class="file-path-wrapper">
+                  <input class="file-path validate" type="text" placeholder="Ajoutez une photo">
+                </div>
+              </div>
+              <div class="file-field input-field col s3">
+                <div class="btn"><i class="material-icons left">perm_media</i></a>
+                  <span>Photo</span>
+                  <input type="file">
+                </div>
+                <div class="file-path-wrapper">
+                  <input class="file-path validate" type="text" placeholder="Ajoutez une photo">
+                </div>
+              </div>
+            </div>	
+            <div class="row">
+               <div class="input-field col s4">                 
+                 <input type="date" id="date_realisation" class="datepicker">
+                 <label class="active" for="date_picker">Date de réalisation du service</label>
+               </div>
+               <div class="input-field col s3">
+                     <input id="avantLe" type="radio" name="dateService" value="avant_le" checked>
+                     <label for="avantLe">Avant le</label>
+                     <input id="datePrecise" type="radio" name="dateService" value="date_precise" checked>
+                     <label for="datePrecise">Date précise</label>
+              </div>
+               <div class="input-field col s5">      
+                <select>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                </select>
+                <label>Nombre de personnes nécessaires</label>     
+               </div>
+            </div>
+            <div class="row">
+               <div class="input-field col s6">
+                  <select>
+                  <option value="1">Aucun</option>
+                  <option value="2">Camionette</option>
+                  <option value="3">Voiture</option>
+                  <option value="3">Vélo</option>
+                </select>
+                <label>Véhicules nécessaires</label>
+               </div>
+               <div class="input-field col s6">      
+                  <p class="range-field">
+                    <input type="range" id="nb_jeton_proposes" min="0" max="4" />
+                  </p>
+                <label>Nombre de jetons par personne</label>         
+               </div>
+            </div>
+            <div class="row">
+               <div class="input-field col s12">
+                  <div class="input-field col s6">
+                    <i class="material-icons prefix">room</i>
+                    <input placeholder="" id="adresse" type="text" class="validate">
+                    <label for="icon_prefix">Adresse</label>
+                  </div>
+                  <div class="input-field col s3">
+                    <input placeholder="Ex: 69100'" id="code_postal" type="text" class="validate">
+                  <label for="CP">Code postal</label>
+                  </div>
+                  <div class="input-field col s3">
+                    <input placeholder="Ex: Villeurbanne'" id="ville" type="text" class="validate">
+                  <label for="ville">Ville</label>
+                  </div>
+               </div>
+            </div> 
+         </form>       
+      </div>
+      <div class="row center">
+          <a  id="demande_service_button" class="btn-large waves-effect waves-light teal lighten-1">Poster ma demande</a>
+          <a href="index.html" id="annulation_button" class="btn-large waves-effect waves-light teal lighten-1">Annuler</a>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <div class="row center">
+          <h4 class=" col s12 light white-text text-lighten-2" style="text-shadow: #000000 1px 1px, #000000 -1px 1px, #000000 -1px -1px, #000000 1px -1px;">Bricolage // Jardinage // Education // Informatique // Réparations // Et bien plus encore...</h4>
+        </div>
+      </div>
+    </div>
+    <div class="parallax"><img src="backgrounds/background6.jpg" alt="Unsplashed background img 2"></div>
+  </div>
+
+  <footer class="page-footer teal">
+    <div class="container">
+      <div class="row center">
+        <div class="col s12">
+          <h5 class="white-text">Qui sommes nous?</h5>
+          <p class="grey-text text-lighten-4">Une équipe formée par des élèves ingénieurs et le Grand Lyon. Notre but commun: permettre l'amélioration de la vie communautaire dans Lyon, et veiller au bien-être de ses citoyens. Nous encourageons le partage, l'entraide, et la bienveillance.</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      Réalisé par des élèves de l'<a class="brown-text text-lighten-3" href="https://www.insa-lyon.fr/">INSA Lyon</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+  <script>
+    $(document).ready(function() {
+        $('#error_communaute').hide();
+        $('select').material_select();
+    }); 
+  </script>
+  <script>
+    $('.datepicker').pickadate({
+    selectMonths: true, // Creates a dropdown to control month
+    selectYears: 15, // Creates a dropdown of 15 years to control year
+    format: 'dd-mm-yyyy'
+  });
+  </script>
+  
+  <script>
+    function preloadFunc() {
+        $.ajax({
+            url : './MainServlet',
+            type : 'POST',
+            dataType : 'json',
+            data: { action: "check_permission",},
+            success : function(data){
+                if(data.response == "401")
+                    document.location.href="needConnection.html";
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                // alert(jqXHR + " | " +textStatus + " | " +errorThrown);
+            }
+        });
+    }
+    window.onpaint = preloadFunc();
+  </script>
+ 
+  <script>
+    $(document).ready(function(){
+        $.ajax({
+            url : './MainServlet',
+            type : 'POST',
+            dataType : 'json',
+            data: { action: "init_demande"},
+            success : function(data){
+                if(data.response == "403"){
+                    $('#error_communaute').show();
+                }
+                else {
+                    //alert(JSON.stringify(Object.values(data.categories["INSA"])));
+                    var communautes_noms = Object.keys(data.categories);
+                    $('#communaute_nom').empty().html('');
+                    $('#communaute_nom').append($("<option></option>").attr("selected","true").attr("disabled","true").text("Selectionnez une communauté"));
+                    for (var i=0; i<communautes_noms.length; i++)
+                        $('#communaute_nom').append($("<option></option>").attr("value",communautes_noms[i]).text(communautes_noms[i]));
+                        $('#communaute_nom').material_select();
+                    $('#communaute_nom').change(function(){
+                        $('#template_nom').empty().html('');
+                        $('#template_nom').material_select();
+                        var categories_noms = Object.values(data.categories[$('#communaute_nom').val()]);
+                        $('#categorie_nom').empty().html('');
+                        $('#categorie_nom').append($("<option></option>").attr("selected","true").attr("disabled","true").text("Selectionnez une catégorie"));
+                        $('#categorie_nom').removeAttr("disabled");
+                        for (var i=0; i<categories_noms.length; i++)
+                            $('#categorie_nom').append($("<option></option>").attr("value",categories_noms[i]).text(categories_noms[i]));
+                        $('#categorie_nom').material_select();
+                    });
+                    $('#categorie_nom').change(function(){
+                        var services_noms = Object.values(data.services[$('#categorie_nom').val()]);
+                        $('#template_nom').empty().html('');
+                        $('#template_nom').append($("<option></option>").attr("selected","true").attr("disabled","true").text("Selectionnez un service"));
+                        $('#template_nom').removeAttr("disabled");
+                        for (var i=0; i<services_noms.length; i++)
+                            $('#template_nom').append($("<option></option>").attr("value",services_noms[i]).text(services_noms[i]));
+                        $('#template_nom').material_select();
+                    });
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                // alert(jqXHR + " | " +textStatus + " | " +errorThrown);
+            },
+            complete: function (jqXHR, textStatus ) {
+                //Redirection
+            }
+        });
+    });
+  </script>
+  
+  <script>
+    $(document).ready(function(){
+	$('#demande_service_button').click(function(){
+            var nomC = document.getElementById('nom_service').value;
+            var descriptionC = document.getElementById('description').value;
+            var dateC = document.getElementById('date_realisation').value;
+            var adresseC = document.getElementById('adresse').value;
+            var codeC = document.getElementById('code_postal').value;
+            var villeC = document.getElementById('ville').value;
+            var categorieC = document.getElementById('categorie_nom').value;
+            var communauteC = document.getElementById('communaute_nom').value;
+            var templateC = document.getElementById('template_nom').value;
+            if(!nomC || !descriptionC || !dateC || !adresseC || !codeC || !villeC || !categorieC || !communauteC || !templateC){
+                        $('#error_empty').show();
+                    }
+            else{
+		$.ajax({
+			url : './MainServlet',
+			type : 'POST',
+			dataType : 'json',
+			data: { action: "create_service",
+                                nom_service: $('#nom_service').val(),
+                                descrition: $('#description').val(),
+                                nb_jeton_proposes: $('#nb_jeton_proposes').val(),
+                                date_realisation: $('#date_realisation').val(),
+                                adresse: $('#adresse').val(),
+                                code_postale: $('#code_postal').val(),
+                                ville: $('#ville').val(),
+                                categorie_nom: $('#categorie_nom').val(),
+                                communaute_nom: $('#communaute_nom').val(),
+                                template_nom: $('#template_nom').val()
+                              },
+			success : function(data){
+                            if(data.response == "403"){
+                                alert("Erreur");
+                            }
+                            else if(data.response == "200"){
+                                document.location.href="serviceCreated.html";
+                            }
+                        },
+                        error: function (jqXHR, textStatus, errorThrown) {
+                            // alert(jqXHR + " | " +textStatus + " | " +errorThrown);
+                        }
+		});
+            }
+	});
+    });
+  </script>
+  
+  <script>
+    function disconnect() {
+        $.ajax({
+            url : './MainServlet',
+            type : 'POST',
+            dataType : 'json',
+            data: { action: "disconnect",},
+            success : function(data){
+                if(data.response == "200")
+                    document.location.href="index.html";
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                // alert(jqXHR + " | " +textStatus + " | " +errorThrown);
+            }
+        });
+    }
+  </script>
+  
+  </body>
+</html>

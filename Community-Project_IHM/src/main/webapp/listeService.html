@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+  <title>Community-Project</title>
+
+  <!-- CSS  -->
+  <link href="./service_files/icon" rel="stylesheet">
+  <link href="./service_files/materialize.css" type="text/css" rel="stylesheet" media="screen,projection">
+  <link href="./service_files/style.css" type="text/css" rel="stylesheet" media="screen,projection">
+  <style>
+	#map {
+	width: 400px;
+	height: 300px;
+	background-color: grey;
+	}
+</style>
+</head>
+<body>
+<nav>
+    <div class="nav-wrapper teal lighten-2">
+      <a href="#!" class="brand-logo">&nbsp;&nbsp;&nbsp;&nbsp;Community Project</a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="acceuilConnecte.html">Accueil</a></li>
+        <li><a href="demandeService.html">Demander un service</a></li>
+        <li><a href="listeService.html">Proposer de l'aide</a></li>
+        <li><a href="listeCommunaute.html">Communautés</a></li>
+        <li><a href="profil.html">Profil</a></li>
+        <li><a onclick="disconnect()">Déconnexion</a></li>
+      </ul>
+      <ul class="side-nav" id="mobile-demo">
+        <li><a href="acceuilConnecte.html">Accueil</a></li>
+        <li><a href="demandeService.html">Demander un service</a></li>
+        <li><a href="listeService.html">Proposer de l'aide</a></li>
+        <li><a href="listeCommunaute.html">Communautés</a></li>
+        <li><a href="profil.html">Profil</a></li>
+        <li><a onclick="disconnect()">Déconnexion</a></li>
+      </ul>
+    </div>
+  </nav>
+	<div id="connexion" class="modal">
+    <div class="modal-content">
+      <h4>Connectez-vous</h4>
+       <div class="row">
+               <div class="input-field col s6">
+                    <i class="material-icons prefix">email</i>
+                    <input id="email" type="email" class="validate">
+                    <label for="email" data-error="adresse mail invalide" data-success="">Email</label>
+               </div>
+               <div class="input-field col s6">
+                    <i class="material-icons prefix">lock</i>
+			              <input id="password" type="password" class="validate">
+                    <label for="password">Mot de passe</label>
+               </div>
+            </div>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Annuler</a>
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Valider</a>
+    </div>
+  </div>
+  <div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <div class="row center">
+          <h2 class="header center white-text text-accent-3" style="text-shadow: #000000 1px 1px, #000000 -1px 1px, #000000 -1px -1px, #000000 1px -1px;">Liste des services par communauté</h2>
+        </div>
+      </div>
+    </div>
+    <div class="parallax"><img src="backgrounds/background2.jpg" alt="Unsplashed background img 2"></div>
+  </div>
+  <div class="row center">
+    <h4 class="teal-text text-lighten-2">Choisissez votre communauté: </h4>
+          <div class="input-field inline">
+            <select id="communaute_nom">
+            </select>
+          </div>
+  </div> 
+  <div class="row">
+    <div class="col s6">  Services à pourvoir:    
+        <ul id="service_pourvoir" class="collection">
+          <li class="collection-item avatar">
+            <a href="service.html" class="collection-item black-text">Titre: Nettoyage de mon jardin<br/>
+            <img src="categories/jardinage.jpg" alt="" class="circle">
+            Catégorie: Jardinage<br/>
+            <p>Demandeur : Valérie
+            </p>
+            <i class="tiny material-icons">today</i>Date: 10/05/2017  | 
+            <i class="tiny material-icons">stars</i> Jetons offerts: 2  | 
+            <i class="tiny material-icons">perm_identity</i> Nombre de personnes: 1</a>
+          </li>
+          <li class="collection-item avatar">
+            <a href="service.html" class="collection-item black-text">Titre: Fabrication et pose de coffrages en bois<br/>
+            <img src="categories/bricolage.jpg" alt="" class="circle">Catégorie: Bricolage<br/>
+            <p>Demandeur : Arthur
+            </p>
+            <i class="tiny material-icons">today</i>Date: 13/05/2017  | 
+            <i class="tiny material-icons">stars</i> Jetons offerts: 3  | 
+            <i class="tiny material-icons">perm_identity</i> Nombre de personnes: 2</a>
+          </li>
+        </ul>     
+    </div>
+    <div class="col s6">  Services auxquels vous avez postulé:
+        <ul id="service_postule" class="collection">
+          <li class="collection-item avatar">
+            <a href="service.html" class="collection-item black-text">Titre: Nettoyage de mon jardin<br/>
+            <img src="categories/jardinage.jpg" alt="" class="circle">
+            Catégorie: Jardinage<br/>
+            <p>Demandeur : Valérie
+            </p>
+            <i class="tiny material-icons">today</i>Date: 10/05/2017  | 
+            <i class="tiny material-icons">stars</i> Jetons offerts: 2  | 
+            <i class="tiny material-icons">perm_identity</i> Nombre de personnes: 1</a>
+          </li>
+          <li class="collection-item avatar">
+            <a href="service.html" class="collection-item black-text">Titre: Fabrication et pose de coffrages en bois<br/>
+            <img src="categories/bricolage.jpg" alt="" class="circle">Catégorie: Bricolage<br/>
+            <p>Demandeur : Arthur
+            </p>
+            <i class="tiny material-icons">today</i>Date: 13/05/2017  | 
+            <i class="tiny material-icons">stars</i> Jetons offerts: 3  | 
+            <i class="tiny material-icons">perm_identity</i> Nombre de personnes: 2</a>
+          </li>
+        </ul>   
+    </div>
+</div>
+	<div class="row center">
+		<a href="demandeService.html" class="waves-effect waves-light btn">Demander un nouveau service</a>				
+	</div>
+</div>
+
+    <div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <div class="row center">
+          <h4 class=" col s12 light white-text text-lighten-2" style="text-shadow: #000000 1px 1px, #000000 -1px 1px, #000000 -1px -1px, #000000 1px -1px;">Bricolage // Jardinage // Education // Informatique // Réparations // Et bien plus encore...</h4>
+        </div>
+      </div>
+    </div>
+    <div class="parallax"><img src="backgrounds/background9.jpg" alt="Unsplashed background img 2"></div>
+  </div>
+
+  <footer class="page-footer teal">
+    <div class="container">
+      <div class="row center">
+        <div class="col s12">
+          <h5 class="white-text">Qui sommes nous?</h5>
+          <p class="grey-text text-lighten-4">Une équipe formée par des élèves ingénieurs et le Grand Lyon. Notre but commun: permettre l'amélioration de la vie communautaire dans Lyon, et veiller au bien-être de ses citoyens. Nous encourageons le partage, l'entraide, et la bienveillance.</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      Réalisé par des élèves de l'<a class="brown-text text-lighten-3" href="https://www.insa-lyon.fr/">INSA Lyon</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!--  Scripts-->
+  <script src="./service_files/jquery-2.1.1.min.js.download"></script>
+  <script src="./service_files/materialize.js.download"></script>
+  <script src="./service_files/init.js.download"></script>
+	<script>
+  $(document).ready(function(){
+    // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+    $('.modal').modal();
+  });
+  </script>
+  <script>
+    $(document).ready(function() {
+        $('select').material_select();
+    });
+  </script>
+
+<script>
+    function preloadFunc() {
+        $.ajax({
+            url : './MainServlet',
+            type : 'POST',
+            dataType : 'json',
+            data: { action: "check_permission",},
+            success : function(data){
+                if(data.response == "401")
+                    document.location.href="needConnection.html";
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                // alert(jqXHR + " | " +textStatus + " | " +errorThrown);
+            }
+        });
+    }
+    window.onpaint = preloadFunc();
+  </script>
+ 
+<script>
+    $(document).ready(function(){
+        $.ajax({
+            url : './MainServlet',
+            type : 'POST',
+            dataType : 'json',
+            data: { action: "init_liste_service"},
+            success : function(data){
+                if(data.communautes_noms.length==0){
+                    alert("error data empty");
+                }else{
+                    $('#communaute_nom').empty().html('');
+                    $('#communaute_nom').append($("<option></option>").attr("selected","true").attr("disabled","true").text("Selectionnez une communauté"));
+                    for (var i=0; i<data.communautes_noms.length; i++)
+                        $('#communaute_nom').append($("<option></option>").attr("value",data.communautes_noms[i]).text(data.communautes_noms[i]));
+                        $('#communaute_nom').material_select();
+                    $('#communaute_nom').change(function(){
+                        $('#service_postule').empty().html('');
+                        $('#service_pourvoir').empty().html('');
+                        for(var i=0; i<data.service_pourvoir.length; i++){
+                            $('#service_pourvoir').append("<li class=\"collection-item avatar\"></li>");
+                            $('#service_pourvoir > li:last-child').append("<a href=\"service.html?id="+data.service_pourvoir[i].service_id+"\" class=\"collection-item black-text\">Titre: "+data.service_pourvoir[i].service_nom+"<br/>");
+                            $('#service_pourvoir > li:last-child').append("<img src=\"categories/"+data.service_pourvoir[i].service_cat+".jpg\" alt=\"\" class=\"circle\">Catégorie: "+data.service_pourvoir[i].service_cat+"<br/><p>Demandeur : "+data.service_pourvoir[i].service_demandeur+"</p>");
+                            $('#service_pourvoir > li:last-child').append("<i class=\"tiny material-icons\">today</i>Date: "+data.service_pourvoir[i].service_date+"  | <i class=\"tiny material-icons\">stars</i> Jetons offerts: "+data.service_pourvoir[i].service_jetons+"  | <i class=\"tiny material-icons\">perm_identity</i> Nombre de personnes: "+"1"+"</a>");
+                        }
+                        for(var i=0; i<data.service_postule.length; i++){
+                            $('#service_postule').append("<li class=\"collection-item avatar\"></li>");
+                            $('#service_postule > li:last-child').append("<a href=\"service.html?id="+data.service_postule[i].service_id+"\" class=\"collection-item black-text\">Titre: "+data.service_postule[i].service_nom+"<br/>");
+                            $('#service_postule > li:last-child').append("<img src=\"categories/"+data.service_postule[i].service_cat+".jpg\" alt=\"\" class=\"circle\">Catégorie: "+data.service_postule[i].service_cat+"<br/><p>Demandeur : "+data.service_postule[i].service_demandeur+"</p>");
+                            $('#service_postule > li:last-child').append("<i class=\"tiny material-icons\">today</i>Date: "+data.service_postule[i].service_date+"  | <i class=\"tiny material-icons\">stars</i> Jetons offerts: "+data.service_postule[i].service_jetons+"  | <i class=\"tiny material-icons\">perm_identity</i> Nombre de personnes: "+"1"+"</a>");
+                        }
+                    }); 
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                // alert(jqXHR + " | " +textStatus + " | " +errorThrown);
+            }
+        });
+    });
+</script>
+  
+  <script>
+    function disconnect() {
+        $.ajax({
+            url : './MainServlet',
+            type : 'POST',
+            dataType : 'json',
+            data: { action: "disconnect",},
+            success : function(data){
+                if(data.response == "200")
+                    document.location.href="index.html";
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                // alert(jqXHR + " | " +textStatus + " | " +errorThrown);
+            }
+        });
+    }
+  </script>
+  <style>
+	#map {
+	width: 100%;
+	height: 200px;
+	background-color: grey;
+	}
+</style>
+<div class="hiddendiv common"></div><div class="drag-target" data-sidenav="mobile-demo" style="left: 0px; touch-action: pan-y; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></div></body></html>

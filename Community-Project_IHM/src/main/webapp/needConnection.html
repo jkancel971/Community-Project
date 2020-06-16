@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+  <title>Community-Project</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body>
+  <nav>
+    <div class="nav-wrapper teal lighten-2">
+      <a href="#!" class="brand-logo">&nbsp;&nbsp;&nbsp;&nbsp;Community Project</a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="demandeService.html">Demander un service</a></li>
+        <li><a href="service.html">Proposer de l'aide</a></li>
+        <li><a href="listeCommunaute.html">Communautés</a></li>
+        <li><a href="inscription.html">Inscription</a></li>
+        <li><a href="#connexion">Connexion</a></li>
+      </ul>
+      <ul class="side-nav" id="mobile-demo">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="demandeService.html">Demander un service</a></li>
+        <li><a href="service.html">Proposer de l'aide</a></li>
+        <li><a href="listeCommunaute.html">Communautés</a></li>
+        <li><a href="inscription.html">Inscription</a></li>
+        <li><a href="#connexion">Connexion</a></li>
+      </ul>
+    </div>
+  </nav>
+    
+  <div id="connexion" class="modal">
+    <div class="modal-content">
+      <h4>Connectez-vous</h4>
+      <label id="invalid_inputs_label" for="invalid connection" class="red-text">Email ou mot de passe invalide!</label>
+       <div class="row">
+               <div class="input-field col s6">
+                    <i class="material-icons prefix">email</i>
+                    <input id="email" type="email" class="validate">
+                    <label for="email">Email</label>
+               </div>
+               <div class="input-field col s6">
+                    <i class="material-icons prefix">lock</i>
+                    <input id="password" type="password" class="validate">
+                    <label for="password">Mot de passe</label>
+               </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+      <a class="modal-action modal-close waves-effect waves-green btn-flat">Annuler</a>
+      <a id="connect_button" class="btn-flat">Valider</a>
+    </div>
+  </div>
+    
+  <div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <div class="row center">
+          <h2 class="header center red-text text-accent-3">Veuillez vous connecter pour pouvoir accéder à cette page.</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <footer class="page-footer teal">
+    <div class="container">
+      <div class="row center">
+        <div class="col s12">
+          <h5 class="white-text">Qui sommes nous?</h5>
+          <p class="grey-text text-lighten-4">Une équipe formée par des élèves ingénieurs et le Grand Lyon. Notre but commun: permettre l'amélioration de la vie communautaire dans Lyon, et veiller au bien-être de ses citoyens. Nous encourageons le partage, l'entraide, et la bienveillance.</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      Réalisé par des élèves de l'<a class="brown-text text-lighten-3" href="https://www.insa-lyon.fr/">INSA Lyon</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+  <script>
+  $(document).ready(function(){
+      $('#invalid_inputs_label').hide();
+    // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+    $('.modal').modal();
+  });
+  </script>
+  
+  <script>
+    $(document).ready(function(){
+	$('#connect_button').click(function(){
+		$.ajax({
+			url : './MainServlet',
+			type : 'POST',
+			dataType : 'json',
+			data: { action: "connect",
+                                nom_utilisateur : $('#email').val(),
+                                mot_de_passe : $('#password').val()
+                              },
+			success : function(data){
+                            if(data.response == "200")
+                                document.location.href="acceuilConnecte.html";
+                            else
+                                $('#invalid_inputs_label').show();
+                        },
+                        error: function (jqXHR, textStatus, errorThrown) {
+                            // alert(jqXHR + " | " +textStatus + " | " +errorThrown);
+                        }
+		});
+	});
+    });
+  </script>
+  
+  </body>
+</html>

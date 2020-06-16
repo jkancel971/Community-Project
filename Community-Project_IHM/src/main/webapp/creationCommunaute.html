@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+  <title>Community-Project</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body>
+  <nav>
+    <div class="nav-wrapper teal lighten-2">
+      <a href="#!" class="brand-logo">&nbsp;&nbsp;&nbsp;&nbsp;Community Project</a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="acceuilConnecte.html">Accueil</a></li>
+        <li><a href="demandeService.html">Demander un service</a></li>
+        <li><a href="listeService.html">Proposer de l'aide</a></li>
+        <li><a href="listeCommunaute.html">Communautés</a></li>
+        <li><a href="profil.html">Profil</a></li>
+        <li><a href="#connexion">Connexion</a></li>
+      </ul>
+      <ul class="side-nav" id="mobile-demo">
+        <li><a href="acceuilConnecte.html">Accueil</a></li>
+        <li><a href="demandeService.html">Demander un service</a></li>
+        <li><a href="listeService.html">Proposer de l'aide</a></li>
+        <li><a href="listeCommunaute.html">Communautés</a></li>
+        <li><a href="profil.html">Profil</a></li>
+        <li><a href="#connexion">Connexion</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div id="connexion" class="modal">
+    <div class="modal-content">
+      <h4>Connectez-vous</h4>
+       <div class="row">
+               <div class="input-field col s6">
+                    <i class="material-icons prefix">email</i>
+                    <input id="email" type="email" class="validate">
+                    <label for="email" data-error="adresse mail invalide" data-success="">Email</label>
+               </div>
+               <div class="input-field col s6">
+                    <i class="material-icons prefix">lock</i>
+			              <input id="password" type="password" class="validate">
+                    <label for="password">Mot de passe</label>
+               </div>
+            </div>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Annuler</a>
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Valider</a>
+    </div>
+  </div>
+  <div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <div class="row center">
+            <h2 class="header center teal-text text-lighten-2" style="text-shadow: #000000 1px 1px, #000000 -1px 1px, #000000 -1px -1px, #000000 1px -1px;">Créez votre communauté!</h2>
+        </div>
+      </div>
+    </div>
+    <div class="parallax"><img src="backgrounds/background10.jpg" alt="Unsplashed background img 2"></div>
+  </div>
+  <br/>
+  <div class="container">
+    <div class="section">
+        <div class="row center">
+            <h5>Choisissez un nom pour votre communauté ainsi que les catégories qui y apparaitront:</h5>
+        </div>
+       <div class="row">
+           <label id="error_empty" class="red-text">Tous les champs doivent etre remplis !</label>
+         <form class="col s12">
+            <div class="row">
+                <div class="col s3"></div>
+               <div class="input-field col s6">
+                    <i class="material-icons prefix">store</i>
+                    <input id="nom" type="text" class="validate">
+                    <label for="nom">Nom de la communauté</label>
+               </div>
+               <div class="col s3"></div>
+            </div>
+            <div class="row">
+                <div class="input-field col s2"></div>
+                <div id="checkbox_col_1" class="input-field col s3">
+                    <p>
+                        <input type="checkbox" id="jardinage" />
+                        <label for="jardinage">Jardinage</label>
+                    </p>
+                    <p>
+                        <input type="checkbox" id="bricolage" />
+                        <label for="bricolage">Bricolage</label>
+                    </p>
+                    <p>
+                        <input type="checkbox" id="nettoyage" />
+                        <label for="nettoyage">Nettoyage</label>
+                    </p>
+                    <p>
+                        <input type="checkbox" id="dépannage" />
+                        <label for="dépannage">Dépannage</label>
+                    </p>
+               </div>
+               <div id="checkbox_col_2" class="input-field col s3">
+                    <p>
+                        <input type="checkbox" id="cuisine" />
+                        <label for="cuisine">Cuisine</label>
+                    </p>
+                    <p>
+                        <input type="checkbox" id="déménagement" />
+                        <label for="déménagement">Déménagement</label>
+                    </p>
+                    <p>
+                        <input type="checkbox" id="evènementiel" />
+                        <label for="evènementiel">Evènementiel</label>
+                    </p>
+                    <p>
+                        <input type="checkbox" id="shopping" />
+                        <label for="shopping">Shopping</label>
+                    </p>
+               </div>
+               <div id="checkbox_col_3" class="input-field col s3">
+                    <p>
+                        <input type="checkbox" id="informatique" />
+                        <label for="informatique">Informatique</label>
+                    </p>
+                    <p>
+                        <input type="checkbox" id="cours" />
+                        <label for="cours">Cours particuliers</label>
+                    </p>
+                    <p>
+                        <input type="checkbox" id="baby-sitting" />
+                        <label for="baby-sitting">Baby-sitting</label>
+                    </p>
+                    <p>
+                        <input type="checkbox" id="garde" />
+                        <label for="garde">Garde d'animaux</label>
+                    </p>
+               </div>
+            </div>			
+            </div> 
+         </form>       
+      </div>
+      <div class="row center">
+          <a id="creation_communaute_button" class="btn-large waves-effect waves-light teal lighten-1">Valider</a>
+          <a href="index.html" id="annulation_button" class="btn-large waves-effect waves-light teal lighten-1">Annuler</a>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <div class="row center">
+          <h4 class=" col s12 light white-text text-lighten-2" style="text-shadow: #000000 1px 1px, #000000 -1px 1px, #000000 -1px -1px, #000000 1px -1px;">Bricolage // Jardinage // Education // Informatique // Réparations // Et bien plus encore...</h4>
+        </div>
+      </div>
+    </div>
+    <div class="parallax"><img src="backgrounds/background5.jpg" alt="Unsplashed background img 2"></div>
+  </div>
+
+  <footer class="page-footer teal">
+    <div class="container">
+      <div class="row center">
+        <div class="col s12">
+          <h5 class="white-text">Qui sommes nous?</h5>
+          <p class="grey-text text-lighten-4">Une équipe formée par des élèves ingénieurs et le Grand Lyon. Notre but commun: permettre l'amélioration de la vie communautaire dans Lyon, et veiller au bien-être de ses citoyens. Nous encourageons le partage, l'entraide, et la bienveillance.</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      Réalisé par des élèves de l'<a class="brown-text text-lighten-3" href="https://www.insa-lyon.fr/">INSA Lyon</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+  <script>$(document).ready(function() {
+    $('select').material_select();
+  }); 
+  </script>
+  
+  <script>
+    function preloadFunc() {
+        $.ajax({
+            url : './MainServlet',
+            type : 'POST',
+            dataType : 'json',
+            data: { action: "check_permission",},
+            success : function(data){
+                if(data.response == "401")
+                    document.location.href="needConnection.html";
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                // alert(jqXHR + " | " +textStatus + " | " +errorThrown);
+            }
+        });
+    }
+    window.onpaint = preloadFunc();
+  </script>
+
+  <script>
+    $(document).ready(function(){
+        $.ajax({
+            url : './MainServlet',
+            type : 'POST',
+            dataType : 'json',
+            data: { action: "init_creation_communaute"},
+            success : function(data){
+                if(data.length==0){
+                    alert("error data empty");
+                }else{
+                    $('#checkbox_col_1').empty().html('');
+                    $('#checkbox_col_2').empty().html('');
+                    $('#checkbox_col_3').empty().html('');
+
+                    for(var i=0;i<data.length;i++) {
+                        if(i%3===0) {
+                            $('#checkbox_col_1').append("<p></p>");
+                            $('#checkbox_col_1 > p:last-child').append("<input id=\""+data[i]+"\" type=\"checkbox\" />");
+                            $('#checkbox_col_1 > p:last-child').append("<label></label>");
+                            $('#checkbox_col_1 > p:last-child > label').attr("for",data[i]).text(data[i]);
+                        }
+                        else if (i%3===1){
+                            $('#checkbox_col_2').append("<p></p>");
+                            $('#checkbox_col_2 > p:last-child').append("<input id=\""+data[i]+"\" type=\"checkbox\" />");
+                            $('#checkbox_col_2 > p:last-child').append("<label></label>");
+                            $('#checkbox_col_2 > p:last-child > label').attr("for",data[i]).text(data[i]);
+                        }
+                        else{
+                            $('#checkbox_col_3').append("<p></p>");
+                            $('#checkbox_col_3 > p:last-child').append("<input id=\""+data[i]+"\" type=\"checkbox\" />");
+                            $('#checkbox_col_3 > p:last-child').append("<label></label>");
+                            $('#checkbox_col_3 > p:last-child > label').attr("for",data[i]).text(data[i]);
+                        }
+                   }
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                alert(jqXHR + " | " +textStatus + " | " +errorThrown);
+            }
+        });
+    });
+  </script>
+  
+<script>
+    $(document).ready(function(){
+	$('#creation_communaute_button').click(function(){
+            var categories = [];
+            var nomC = document.getElementById('nom').value;
+            for(i=1;i<= $('#checkbox_col_1 > p').length;i++) {
+                if($('#checkbox_col_1 > p:nth-child('+i+') > input').is(':checked')){
+                    categories.push($('#checkbox_col_1 > p:nth-child('+i+') > input').attr("id"));
+                }
+            }
+            for(i=1;i<= $('#checkbox_col_2 > p').length;i++) {
+                if($('#checkbox_col_2 > p:nth-child('+i+') > input').is(':checked')){
+                    categories.push($('#checkbox_col_2 > p:nth-child('+i+') > input').attr("id"));
+                }
+            }
+            for(i=1;i<= $('#checkbox_col_3 > p').length;i++) {
+                if($('#checkbox_col_3 > p:nth-child('+i+') > input').is(':checked')){
+                    categories.push($('#checkbox_col_3 > p:nth-child('+i+') > input').attr("id"));
+                }
+            }
+            if(!nomC){
+                $('#error_empty').show();
+            }
+            else{
+                $.ajax({
+                    url : './MainServlet',
+                    type : 'POST',
+                    dataType : 'json',
+                    data: { action: "create_communaute",
+                            communaute_nom: $('#nom').val(),
+                            categories : JSON.stringify(categories)
+                          },
+                    success : function(data){
+                            alert("Communauté créée !");
+                           // document.location.href="communaute.html?id="+data.id;
+                    },
+                    error: function (jqXHR, textStatus, errorThrown) {
+                        alert(jqXHR + " | " +textStatus + " | " +errorThrown);
+                    }
+                });
+            }
+	});
+    });
+  </script>
+  
+  <style>
+	#map {
+	width: 100%;
+	height: 300px;
+	background-color: grey;
+	}
+</style>
+  </body>
+</html>
